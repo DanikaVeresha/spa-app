@@ -26,13 +26,10 @@ pip install -r requirements.txt
    In the terminal PyCharm enter:
 ```bash
 docker build --tag <name container> .
-```
-4. Next:
-```bash
 docker-compose up -d
 ```
-5. Change the database settings in the settings.py file
-6. Run the following commands:
+4. Change the database settings in the settings.py file
+5. Run the following commands:
 ```bash
 python manage.py makemigrations
 python manage.py migrate
