@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Post SPA-WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+
+<h1><i>
+    Welcome to the SPA-WebApp Delete Post. Here you can delete any post from the PostsBoard.
+</i></h1>
+
+{% if error %}
+    <h2><i>
+        {{ error }}
+    </i></h2>
+{% endif %}
+
+<div class="container">
+    <button type="button" style="background-color:Tomato;" onclick="window.location.href='postboard'">Back to PostsBoard</button>
+</div>
+<br>
+<div class="container">
+    <form action="delete_post" method="post">
+        {% csrf_token %}
+        <select id="post_id" name="post_id" style="width: 150px; height: 30px; background-color: YellowGreen;">
+            <option value="">Select post</option>
+            {% for item in result %}
+            <option value="{{ item.id }}">{{ item.Text }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" style="background-color:rgb(255, 0, 0);">Delete post</button>
+    </form>
+</div>
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkKz8ZgywUIB91EUxUWKbqHTMkIJOmBFiUg&s");
+    }
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: DodgerBlue;
+    }
+    .container {
+        text-align: center;
+        margin-top: 30px;
+    }
+    button {
+        width: 150px;
+        height: 30px;
+        margin-top: 10px;
+    }
+</style>
+
+</body>
+</html>

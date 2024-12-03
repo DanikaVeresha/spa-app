@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create post to SPA-WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+
+<h1><i>
+    Welcome to the SPA-WebApp. Create and share your posts!
+</i></h1>
+<br>
+<button type="button" style="background-color:Tomato;" onclick="window.location.href='postboard'">Back to PostsBoard</button>
+<br>
+<br>
+<form action="add_post" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <input type="text" placeholder="Username" name="username" required>
+        <label for="username"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <textarea name="comment" placeholder="Enter your comment/or text here...." id="comment" cols="50000" rows="100" required></textarea>
+        <label for="comment"><b><small><sup><i>*required field</i></sup></small></b></label>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="container">
+        <button type="submit" style="background-color:DodgerBlue;">Send</button>
+        <button type="reset" style="background-color:Orange;">Reset</button>
+    </div>
+</form>
+
+{% if error %}
+    <h2><i>
+        {{ error }}
+    </i></h2>
+{% endif %}
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkKz8ZgywUIB91EUxUWKbqHTMkIJOmBFiUg&s");
+    }
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: DodgerBlue;
+    }
+    h3 {
+        text-align: left;
+        margin-top: 10px;
+        color: DodgerBlue;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 10px;
+        color: Yellow;
+    }
+    .container {
+        text-align: left;
+        margin-top: 10px;
+    }
+    label {
+        color: DodgerBlue;
+    }
+    textarea {
+        width: 300px;
+        height: 100px;
+        font-size: 13px;
+        border: none;
+        border-radius: 5px;
+        wrap: soft;
+        resize: none;
+    }
+    input {
+        width: 300px;
+        height: 30px;
+        font-size: 13px;
+        border: none;
+        border-radius: 5px;
+    }
+    button {
+        width: 150px;
+        height: 30px;
+        font-size: 13px;
+        color: Black;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    form {
+        margin-top: 10px;
+        margin-left: 450px;
+    }
+</style>
+
+</body>
+</html>

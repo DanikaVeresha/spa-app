@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PostsBoard SPA-WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+
+<h1><i>
+    Welcome to the SPA-WebApp PostBoard. Here you can leave any comments, share your own wishes
+    and opinions with other users of the platform, ask questions and get a quick answer, communicate
+    with other users on any topics<br>
+    * Set sorting to retriever data...After receiving the data, update the query by clicking "Reset" button
+</i></h1>
+
+<div class="container">
+    <button type="button" style="background-color:rgb(0, 255, 63);" onclick="window.location.href='add_post'">Create Post</button>
+    <button type="button" style="background-color:Red;" onclick="window.location.href='delete_post'">Delete Post</button>
+    <button type="button" style="background-color:Tomato;" onclick="window.location.href='login'">Back to Log in</button>
+    <button type="button" style="background-color:rgb(255, 0, 255);" onclick="window.location.href='add_comment'">Add comments</button>
+    <button type="button" style="background-color:DodgerBlue;" onclick="window.location.href='comments'">CommentsBoard</button>
+    <button type="button" style="background-color:MediumSeaGreen;" onclick="window.location.href='update_user'">Update user</button>
+</div>
+<br>
+<form action="postboard" method="post">
+    {% csrf_token %}
+    <select id="sort" name="sort" style="width: 150px; height: 30px; background-color: YellowGreen;">
+        <option value="">Select sorting</option>
+        <option value="1">By Author</option>
+        <option value="2">By Date</option>
+        <option value="3">By Email</option>
+    </select>
+    <button type="submit" style="background-color:Orange;">Show posts</button>
+    <button type="button" style="background-color:rgb(64, 236, 255);" onclick="window.location.href='postboard'">Reset</button>
+</form>
+<br>
+<h2><i>
+    Posts:
+</i></h2>
+
+{% if error %}
+    <h3><i>
+        {{ error }}
+    </i></h3>
+{% endif %}
+
+{% for item in result %}
+<ul class="uk-comment-list">
+    <li>
+        <article class="uk-comment">
+            <header class="uk-comment" style="background-color: LightGray;">
+                <h4 class="uk-comment header">
+                    Post`s author: {{ item.User.UserName }} - / CreatedDate: {{ item.Created }} - / Author`s email: {{ item.User.Email }}
+                </h4>
+            </header>
+            <div class="uk-comment-body">
+                <h3 class="uk-comment-body">
+                    <i>
+                        &nbsp;&nbsp;&nbsp; {{ item.Text }}
+                    </i>
+                </h3>
+            </div>
+        </article>
+    </li>
+</ul>
+{% endfor %}
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkKz8ZgywUIB91EUxUWKbqHTMkIJOmBFiUg&s");
+    }
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: DodgerBlue;
+    }
+    h2 {
+        text-align: left;
+        margin-top: 10px;
+        color: Yellow;
+    }
+    button {
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 150px;
+        height: 30px;
+    }
+    h3 {
+        text-align: left;
+        margin-top: 10px;
+        color: Yellow;
+        height: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .container {
+        margin-top: 10px;
+        margin-left: 130px;
+    }
+    form {
+        margin-top: 10px;
+        margin-left: 400px;
+    }
+</style>
+</body>
+</html>

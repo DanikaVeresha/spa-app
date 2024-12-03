@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page SPA-WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+
+<h1><i>
+    Dear user, please log in before you start working with the coolest web application.
+    Please fill in the form below with the appropriate data.
+</i></h1>
+
+<h3><i>
+    *Attention users! Unregistered users cannot use the platform.<br>
+    *If you don't remember your password, click the "Update user" button
+    and simply enter your name and new password twice
+</i></h3>
+
+<h1><i>
+    Login:
+</i></h1>
+
+{% if error %}
+    <h2><i>
+        {{ error }}
+    </i></h2>
+{% endif %}
+
+<form action="login" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <label for="username"><b>Enter username:</b></label>
+        <input type="text" placeholder="JoeDone" name="username" required>
+        <label for="username"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <label for="password"><b>Enter password:</b></label>
+        <input type="password" placeholder="JoeDone1234" name="password" required>
+        <label for="password"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <button type="submit" style="background-color:MediumSeaGreen;">Log in</button>
+        <button type="reset" style="background-color:DodgerBlue;">Reset</button>
+        <button type="button" style="background-color:Orange;" onclick="window.location.href='register'">Register</button>
+        <button type="button" style="background-color:Violet;" onclick="window.location.href='update_user'">Update user</button>
+        <button type="button" style="background-color:Red;" onclick="window.location.href='delete_user'">Delete user</button>
+    </div>
+</form>
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0oeSxfM__p3SbFDkRr22LHGDQ29OZvhCdGQ&s");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: rgb(4, 255, 255);
+    }
+    h2 {
+        text-align: center;
+        margin-top: 10px;
+        color: rgb(255, 255, 0);
+    }
+    h3 {
+        text-align: center;
+        margin-top: 10px;
+        color: rgb(255, 255, 0);
+    }
+    .container {
+        text-align: center;
+        margin-top: 15px;
+    }
+    label {
+        color: rgb(4, 255, 255);
+    }
+    input {
+        width: 300px;
+        height: 20px;
+        font-size: 13px;
+        margin-top: 20px;
+        background-color: LightGray;
+    }
+    button {
+        width: 90px;
+        height: 30px;
+        font-size: 13px;
+        margin-top: 50px;
+    }
+</style>
+
+</body>
+</html>

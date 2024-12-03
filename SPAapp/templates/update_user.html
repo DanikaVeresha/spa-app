@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User`s Data SPA-WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+
+<h1><i>
+    Welcome to the SPA-WebApp Update User`s Data. Here you can update your own data.
+</i></h1>
+
+<h2><i>
+    Dear user, in the form below, in the appropriate fields, enter the new data that you want to
+    change, other fields can be left empty, your previous data will remain relevant. Be careful,
+    the field with your name is mandatory to fill in, you cannot make any changes to this field.
+    Also, the field for duplicating the password is mandatory to fill in, in case of changing the
+    password.<br>
+    After a successful update, you will be redirected to the login page
+</i></h2>
+
+{% if error %}
+    <h2><i>
+        {{ error }}
+    </i></h2>
+{% endif %}
+
+<div class="container">
+    <button type="button" style="background-color:Tomato;" onclick="window.location.href='postboard'">Back to PostsBoard</button>
+</div>
+
+<div class="container">
+    <form action="update_user" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <label for="username"><b>Username:</b></label>
+            <input type="text" placeholder="JoeDone" name="username" required>
+            <label for="username"><b><small><sup><i>*required field</i></sup></small></b></label>
+        </div>
+        <div class="container">
+            <label for="email"><b>Email:</b></label>
+            <input type="email" placeholder="JoeDon@gmail.com" name="email">
+        </div>
+        <div class="container">
+            <label for="password"><b>Password:</b></label>
+            <input type="password" placeholder="JoeDone1234" name="password">
+        </div>
+        <div class="container">
+            <label for="password2"><b>Repeat password:</b></label>
+            <input type="password" placeholder="JoeDone1234" name="password2">
+            <label for="password2"><b><small><sup><i>*required field</i></sup></small></b></label>
+        </div>
+        <div class="container">
+            <label for="captcha"><b>CAPTCHA:</b></label>
+            <input type="text" placeholder="CAPTCHA1234" name="captcha">
+        </div>
+        <div class="container">
+            <label for="homepage"><b>HomePage:</b></label>
+            <input type="url" placeholder="https://" name="homepage">
+        </div>
+        <div class="container">
+            <button type="submit" style="background-color:MediumSeaGreen;">Update</button>
+            <button type="reset" style="background-color:Orange;">Reset</button>
+            <button type="button" style="background-color:DodgerBlue;" onclick="window.location.href='update_user'">Try again</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkKz8ZgywUIB91EUxUWKbqHTMkIJOmBFiUg&s");
+    }
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: DodgerBlue;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 10px;
+        color: Yellow;
+    }
+    button {
+        margin-top: 10px;
+        margin-left: -190px;
+        width: 150px;
+        height: 30px;
+    }
+    form button {
+        margin-top: 10px;
+        margin-left: 0px;
+        width: 83px;
+        height: 25px;
+    }
+    h3 {
+        text-align: left;
+        margin-top: 10px;
+        color: Yellow;
+        height: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .container {
+        margin-top: 10px;
+        margin-left: 250px;
+    }
+    label {
+        margin-top: 5px;
+        color: Yellow;
+    }
+</style>
+
+</body>
+</html>

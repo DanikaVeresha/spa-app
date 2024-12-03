@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CommentsBoard SPA-WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+<h1>
+    <i>
+        Welcome to the CommentsBoard. Here you can see all comments for post.
+    </i>
+</h1>
+<div class="container">
+    <button type="button" style="background-color:Violet;" onclick="window.location.href='add_comment'">Add comment</button>
+    <button type="button" style="background-color:Tomato;" onclick="window.location.href='postboard'">Back to PostBoard</button>
+    <button type="button" style="background-color:rgb(255, 0, 0);" onclick="window.location.href='delete_comment'">Delete comment</button>
+</div><br><br>
+<h3>
+    <i>
+        Set sorting to retriever data...After receiving the data, update the query by clicking "Set new search" button
+    </i>
+</h3>
+<form action="comments" method="post">
+    {% csrf_token %}
+    <select id="post_id" name="post_id" style="width: 150px; height: 30px; background-color: YellowGreen;">
+        <option value="">Select post</option>
+        {% for item in result %}
+        <option value="{{ item.id }}">{{ item.Text }}</option>
+        {% endfor %}
+    </select>
+    <select id="sort" name="sort" style="width: 150px; height: 30px; background-color: YellowGreen;">
+        <option value="">Select sorting</option>
+        <option value="1">By Author</option>
+        <option value="2">By Date</option>
+    </select>
+    <button type="submit" style="background-color:Orange;">Show comments</button>
+    <button type="button" style="background-color:rgb(64, 236, 255);" onclick="window.location.href='comments'">Set new search</button>
+</form>
+<br>
+<h2>
+    <i><b>
+        Comments:
+    </b></i>
+</h2>
+
+{% if error %}
+<h2>
+    <i>
+        {{ error }}
+    </i>
+</h2>
+{% endif %}
+
+{% if comments_data %}
+{% for item in comments_data %}
+<ul class="uk-comment-list">
+    <li>
+        <article class="uk-comment">
+            <header class="uk-comment" style="background-color: LightGray;">
+                <h4 class="uk-comment header">
+                    Comment`s author: {{ item.User }} - / Comment`s created date: {{ item.Created }}
+                </h4>
+            </header>
+            <header class="uk-comment" style="background-color: LightGray;">
+                <h4 class="uk-comment header">
+                    For post: {{ item.Post.Text }}
+                </h4>
+            </header>
+            <div class="uk-comment-body">
+                <h4 class="uk-comment-body">
+                    <i>
+                        &nbsp;&nbsp;&nbsp; {{ item.Text }}
+                    </i>
+                </h4>
+            </div>
+        </article>
+    </li>
+</ul>
+{% endfor %}
+{% endif %}
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFkKz8ZgywUIB91EUxUWKbqHTMkIJOmBFiUg&s");
+    }
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: DodgerBlue;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 10px;
+        color: Yellow;
+    }
+    h3 {
+        text-align: center;
+        margin-top: 5px;
+        color: Yellow;
+    }
+    h4 {
+        text-align: left;
+        margin-top: 10px;
+        color: rgb(0, 0, 75);
+        height: auto;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .uk-comment-body {
+        text-align: left;
+        margin-top: 5px;
+        color: Orange;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: auto;
+    }
+    button {
+        margin-top: 10px;
+        width: 150px;
+        height: 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+    form {
+        margin-top: 10px;
+        margin-left: 330px;
+    }
+    .container {
+        margin-top: 10px;
+        margin-left: 400px;
+    }
+    .uk-comment-body {
+        margin-top: 10px;
+        margin-left: 10px;
+        color: Yellow;
+    }
+    input {
+        width: 20%;
+        height: 15px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: LightGray;
+        font-size: 13px;
+        margin-left: -300px;
+    }
+    textarea {
+        width: 20%;
+        height: 50px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: LightGray;
+        font-size: 13px;
+        resize: none;
+        margin-left: 10px;
+    }
+</style>
+
+</body>
+</html>

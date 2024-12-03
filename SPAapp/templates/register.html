@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page SPA-WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+
+<h1><i>
+    Dear user, please register before starting to work with the coolest web application.
+    Create your first post and share it with other users.
+</i></h1>
+
+<h1><i>
+    Register:
+</i></h1>
+
+{% if error %}
+    <h2><i>
+        {{ error }}
+    </i></h2>
+{% endif %}
+
+<form action="register" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <label for="username"><b>Enter username:</b></label>
+        <input type="text" placeholder="JoeDone" name="username" required>
+        <label for="username"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <label for="email"><b>Enter email:</b></label>
+        <input type="email" placeholder="JoeDone@gmail.com" name="email" required>
+        <label for="email"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <label for="password"><b>Enter password:</b></label>
+        <input type="password" placeholder="JoeDone1234" name="password" required>
+        <label for="password"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <label for="password2"><b>Repeat password:</b></label>
+        <input type="password" placeholder="JoeDone1234" name="password2" required>
+        <label for="password2"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <label for="captcha"><b>Enter numbers and letters of the Latin alphabet:</b></label>
+        <input type="text" placeholder="CAPTCHA1234" name="captcha" required>
+        <label for="captcha"><b><small><sup><i>*required field</i></sup></small></b></label>
+    </div>
+    <div class="container">
+        <label for="homepage"><b>Link to your homepage:</b></label>
+        <input type="url" placeholder="https://" name="homepage">
+    </div>
+    <div class="container">
+        <button type="submit" style="background-color:MediumSeaGreen;">Register</button>
+        <button type="reset" style="background-color:DodgerBlue;">Reset</button>
+        <button type="button" style="background-color:Orange;" onclick="window.location.href='login'">Log in</button>
+    </div>
+</form>
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0oeSxfM__p3SbFDkRr22LHGDQ29OZvhCdGQ&s");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 10px;
+        color: rgb(255, 152, 255);
+    }
+    h2 {
+        text-align: center;
+        margin-top: 10px;
+        color: rgb(255, 255, 0);
+    }
+    .container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    label {
+        color: rgb(255, 152, 255);
+        margin-right: 10px;
+        align-items: center;
+    }
+    input {
+        width: 200px;
+        height: 20px;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-left: 10px;
+        background-color: LightGray;
+    }
+    button {
+        width: 100px;
+        height: 30px;
+        font-size: 13px;
+        margin-top: 30px;
+    }
+</style>
+
+</body>
+</html>

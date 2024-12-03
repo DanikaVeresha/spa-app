@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SPA WebApp</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGbRjJAKkQIssasTr3dpgeuy_cXT3pLgZSgw&s">
+</head>
+<body>
+
+<h1><i>
+    Dear User, welcome to the SPA-WebApp.
+    In this application you can leave any comments, share your own wishes and opinions
+    with other users of the platform, ask questions and get a quick answer, communicate with other
+    users on any topics.
+    To start using the cool features of the cool platform, click "Next" &#x1F608;
+</i></h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <button type="submit" style="background-color:MediumSeaGreen;">Next</button>
+    </div>
+</form>
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1W0FWijWa43nvpdimPHPDrCyb-Ik2qHglAg&s");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 70px;
+        color: Orange;
+    }
+    .container {
+        text-align: center;
+        margin-top: 130px;
+    }
+    button {
+        width: 100px;
+        height: 50px;
+        font-size: 20px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+</body>
+</html>
