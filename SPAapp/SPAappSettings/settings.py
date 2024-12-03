@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-30w-+$dcr8805t5(@qqcn^4_6lw4_fh__pin!+)o&yek_7us62
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.27.134.21']
 
 
 # Application definition
@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'SPAappSettings.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb',
+        'USER': 'danika',
+        'PASSWORD': '1123',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -120,8 +120,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'img/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'img')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'webapp/img')
