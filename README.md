@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ```bash
 docker build --tag <name container> .
 ```
-  Next:
+4. Next:
 ```bash
 docker-compose up -d
 ```
