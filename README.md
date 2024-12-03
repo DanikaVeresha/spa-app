@@ -48,6 +48,6 @@ http://.......
 - **IT_Name**: desh#dD&esh
 - **Email**: deshdesh288@gmail.com
 - **Phone**: +380 66 605 79 46
-- **LinkedIn**: [Daria Veresha](hhttps://www.linkedin.com/in/daria-veresha-a1912b2ba/)
+- **LinkedIn**: [Daria Veresha](https://www.linkedin.com/in/daria-veresha-a1912b2ba/)
 - **GitHub**: [Daria Veresha](https://github.com/DanikaVeresha?tab=repositories)
 - **Telegram**: @deshdDiesh992
