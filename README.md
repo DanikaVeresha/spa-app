@@ -9,7 +9,7 @@ Test Task for dZENcode Company
 #### Backend: Python - version: 3.11
 
 ## Your PC must have:
-- PyCharm Community or PyCharm Profesional
+- IDE PyCharm Community Edition or PyCharm Professional
 - Docker
 - pgAdmin4
   
