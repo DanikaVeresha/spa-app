@@ -25,7 +25,7 @@ python manage.py runserver
 ```
 6. Open the browser and go to the following link:
 ```bash
-http://.......
+http://127.0.0.1:8000
 ```
 7. Enjoy the project!
 
