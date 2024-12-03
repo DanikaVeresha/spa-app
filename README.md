@@ -8,16 +8,31 @@ Test Task for dZENcode Company
 #### Frontend: HTML, CSS
 #### Backend: Python - version: 3.11
 
-## 
+## Your PC must have:
+- PyCharm Community or PyCharm Profesional
+- Docker
+- pgAdmin4
+  
 ## How to run the project:
 1. Clone the repository
-2. Install the required packages:
+```bash
+https://github.com/DanikaVeresha/spa-app.git
+```
+3. Install the required packages. In the terminal PyCharm enter the following command:
 ```bash
 pip install -r requirements.txt
 ```
 3. Create a database in PostgreSQL
-4. Change the database settings in the settings.py file
-5. Run the following commands:
+   In the terminal PyCharm enter:
+```bash
+docker build --tag <name container> .
+```
+  Next:
+```bash
+docker-compose up -d
+```
+5. Change the database settings in the settings.py file
+6. Run the following commands:
 ```bash
 python manage.py makemigrations
 python manage.py migrate
