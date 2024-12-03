@@ -8,6 +8,8 @@ Test Task for dZENcode Company
 #### Frontend: HTML, CSS
 #### Backend: Python - version: 3.11
 
+### All files of Project you can find to brunch "dev"
+
 ## Your PC must have:
 - IDE PyCharm Community Edition or PyCharm Professional
 - Docker
