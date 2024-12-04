@@ -15,7 +15,7 @@ http://34.44.82.185:8000
 
 ### All files of Project you can find to brunch "dev"
 
-## Your PC must have:
+## Your PC must have the next components for running the project:
 - IDE PyCharm Community Edition or PyCharm Professional
 - Docker
 - pgAdmin4
