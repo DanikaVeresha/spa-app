@@ -23,7 +23,7 @@ http://34.44.82.185:8000
 ## How to run the project:
 1. Clone the repository
 ```bash
-https://github.com/DanikaVeresha/spa-app.git
+git clone https://github.com/DanikaVeresha/spa-app.git -b dev
 ```
 3. Install the required packages. In the terminal PyCharm enter the following command:
 ```bash
