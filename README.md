@@ -1,6 +1,11 @@
 # SPA-WebApp
 Test Task for dZENcode Company 
 
+## To launch the application and start using it as a regular user, follow the link below:
+```bash
+http://34.44.82.185:8000
+```
+
 ## This project was developed on the following versions:
 #### Operating system: Windows 11 - version: 23H2
 #### Framework: Django - version: 3.2.25
