@@ -3,7 +3,7 @@ Test Task for dZENcode Company
 
 ## To launch the application and start using it as a regular user, follow the link below:
 ```bash
-http://34.44.82.185:8000
+http://34.44.82.185:8000 # This external API is not active anymore
 ```
 
 ## This project was developed on the following versions:
